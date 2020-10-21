@@ -12,7 +12,7 @@
 #include "Servicio.h"
 #include "Fecha.h"
 #include "utn.h"
-
+/*
 int initServicios(Servicio listServicios[], int size)
 {
 	int i;
@@ -26,7 +26,7 @@ int initServicios(Servicio listServicios[], int size)
 			ret = OK;
 	}
 	return ret;
-}
+}*/
 void printServicio(Servicio servicio){
 	printf("Id/Descripción: %d ->  %s  - Precio: %.2f\n",servicio.id,servicio.descripcion,servicio.precio);
 }
@@ -40,11 +40,9 @@ int printServicios(Servicio listServicios[], int size)
 	{
 		for(i = ZERO; i < size; i++)
 		{
-			if(!listServicios[i].isEmpty)
-			{
 				printServicio(listServicios[i]);
 				ret = OK;
-			}
+
 		}
 	}
 	printf("********** FIN SECCIÓN MOSTRAR SERVICIOS **********\n");

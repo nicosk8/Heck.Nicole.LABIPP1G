@@ -1,6 +1,0 @@
-********** SECCION AGREGAR BICICLETAS **********
-::::ESTOY EN EL ADD::::Ingrese la marca de la bicicleta:
-falopa
-::::CARGUÉ EL EMPLEADO::::********** SECCION AGREGAR BICICLETAS **********
-::::ENTRÉ AL ADD::::********** SECCION AGREGAR BICICLETAS **********
-::::ESTOY EN EL ADD::::Ingrese la marca de la bicicleta:

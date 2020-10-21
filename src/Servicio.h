@@ -13,7 +13,6 @@ typedef struct
 	int id; //comienza en 20000
 	char descripcion[25];
 	float precio;
-	int isEmpty;
 } Servicio;
 
 int initServicios(Servicio listServicios[], int size);

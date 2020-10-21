@@ -7,12 +7,18 @@
 
 #ifndef TIPO_H_
 #define TIPO_H_
+
+
+
 typedef struct
 {
 	int id; // comienza en 1000
 	char descripcion[20]; // max 20 char
-	int isEmpty;
 } Tipo;
+
+
+
+
 /*Brief initialize isEmpty en 1
  * Param initTipos[] es la lista de tipos
  * Param size  es el tamaño de la lista
@@ -30,4 +36,6 @@ void printTipo(Tipo tipo);
  *devuelve 0 por ok -1 (ERROR) por error
  * */
 int printTipos(Tipo listaTipos[], int size);
+/**/
+Tipo setIdTipo(Tipo listaTipos[],int sizeTipo);
 #endif /* TIPO_H_ */

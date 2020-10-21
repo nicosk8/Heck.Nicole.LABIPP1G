@@ -6,13 +6,11 @@
  */
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "Defines.h"
 #include "Color.h"
-#include "Tipo.h"
-#include "Bicicleta.h"
-#include "Trabajo.h"
 #include "utn.h"
-
+/*
 int initColores(Color listColores[], int size)
 {
 	int i;
@@ -26,7 +24,7 @@ int initColores(Color listColores[], int size)
 			ret = OK;
 	}
 	return ret;
-}
+}*/
 void printColor(Color color){
 	printf("Id/Descripción: %d ->  %s\n",color.id,color.descripcion);
 }
@@ -40,13 +38,27 @@ int printColores(Color listColores[], int size)
 	{
 		for(i = ZERO; i < size; i++)
 		{
-			if(!listColores[i].isEmpty)
-			{
-				printColor(listColores[i]);
-				ret = OK;
-			}
+			printColor(listColores[i]);
+			ret = OK;
 		}
 	}
 	printf("********** FIN SECCIÓN MOSTRAR COLORES **********\n");
 	return ret;
+}
+
+Color setIdColor(Color listaColor[],int sizeColor)
+{
+	Color idColor;
+	// recorro la lista de colores para obtener el idColor
+	for(int i; i < sizeColor; i++)
+	{
+		if(listaColor[i].id >= 1000 && isAlphabetic(listaColor[i].descripcion))
+		{
+			idColor.id = listaColor[i].id;
+			strcpy(idColor.descripcion,listaColor[i].descripcion);
+			//			printf("::: ESTOY EN SET ID COLOR => ID: %d - DESCRIPCIÓN: %s\n",listaColor[i].id,listaColor[i].descripcion);
+		}
+
+	}
+	return idColor;
 }

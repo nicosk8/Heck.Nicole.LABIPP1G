@@ -12,15 +12,19 @@
 #include "Servicio.h"
 #include "Trabajo.h"
 #include "Fecha.h"
+
+
+
 typedef struct
-{
-	int id;
+{	int id;
 	char marca[LENGTH];
 	Tipo idTipo;
 	Color idColor;
 	float rodado;
 	int isEmpty;
 } Bicicleta;
+
+
 
 /*Brief initialize a field
  * Param listBicicletas[] is employees list
@@ -44,4 +48,15 @@ void printBicicleta(Bicicleta bicicleta);
  * Return No return
  * */
 int printBicicletas(Bicicleta listaBicicletas[], int size);
+/**/
+void getNewBicicletaData(char marca[],Tipo *idTipo,Color *idColor,float *rodado,Tipo listaTipo[], int sizeTipo, Color listaColor[],int sizeColor,float listRodados[],int sizeRodado);
+/**/
+Bicicleta setNewBicicleta(int currentId, char marca[],Tipo idTipo,Color idColor,float auxRodado);
+/**/
+float getRodado(float listRodados[],int sizeRodado);
+/**/
+int addBicicleta(int freeIndex,Bicicleta listaBicicletas[],int currentId,int size,char marca[], Tipo idTipo, Color idColor,float rodado);
+/**/
+void add(Bicicleta listaBicicletas[],int size ,int *idBicicleta, Tipo listaTipos[], int sizeTipo,Color listaColor[],int sizeColor, float listRodados[],int sizeRodado);
+
 #endif /* BICICLETA_H_ */

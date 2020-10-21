@@ -14,6 +14,7 @@
 #include "Bicicleta.h"
 #include "Servicio.h"
 #include "Tipo.h"
+#include "Color.h"
 #include "utn.h"
 int main(void) {
 
@@ -25,14 +26,14 @@ int main(void) {
 	float listRodados[QTY_RODADOS] = {20,26,27.5,29};
 	Bicicleta listaBicicletas[QTY_BICILETAS];
 	Trabajo listaTrabajos[QTY_TRABAJOS];
-	int idBicicleta = 1,optionUser= ERROR;
+	int idBicicleta = 1,optionUser;
 
 	// Inicio
 	initBicicletas(listaBicicletas,QTY_BICILETAS);
-	initTipos(listaTipos,QTY_TIPOS);
-	initColores(listaColores,QTY_COLORES);
-	initServicios(listaServicios,QTY_SERVICIOS);
-	initTrabajos(listaTrabajos,QTY_TRABAJOS);
+//	initTipos(listaTipos,QTY_TIPOS);
+//	initColores(listaColores,QTY_COLORES);
+//	initServicios(listaServicios,QTY_SERVICIOS);
+//	initTrabajos(listaTrabajos,QTY_TRABAJOS);
 
 	// Programa principal
 	do
@@ -42,6 +43,10 @@ int main(void) {
 		{
 			case ADD:
 //				add(listaBicicletas,QTY_BICILETAS,&idBicicleta,listaTipos,listaColores,QTY_COLORES,listRodados);
+			add(listaBicicletas,QTY_BICILETAS,&idBicicleta, listaTipos,QTY_TIPOS,
+						listaColores,QTY_COLORES, listRodados,QTY_RODADOS);
+				printf("::::ENTRÉ AL ADD::::\n");
+//				printBicicletas(listaBicicletas,QTY_BICILETAS);
 				break;
 			case MODIFY:
 //				modify(listaBicicletas,QTY_BICILETAS);

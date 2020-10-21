@@ -12,7 +12,6 @@ typedef struct
 {
 	int id; // comienza en 5000
 	char descripcion[20];
-	int isEmpty;
 } Color;
 
 /*Brief initialize isEmpty en 1
@@ -32,5 +31,6 @@ void printColor(Color color);
  *devuelve 0 por ok -1 (ERROR) por error
  * */
 int printColores(Color listColores[], int size);
-
+/**/
+Color setIdColor(Color listaColor[],int sizeColor);
 #endif /* COLOR_H_ */

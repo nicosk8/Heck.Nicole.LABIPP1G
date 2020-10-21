@@ -10,7 +10,7 @@
 #include "Defines.h"
 #include "Tipo.h"
 #include "utn.h"
-
+/*
 int initTipos(Tipo listTipos[], int size)
 {
 	int i;
@@ -24,7 +24,7 @@ int initTipos(Tipo listTipos[], int size)
 			ret = OK;
 	}
 	return ret;
-}
+}*/
 void printTipo(Tipo tipo){
 	printf("Id/Descripción: %d ->  %s\n",tipo.id,tipo.descripcion);
 }
@@ -38,14 +38,28 @@ int printTipos(Tipo listaTipos[], int size)
 	{
 		for(i = ZERO; i < size; i++)
 		{
-			if(!listaTipos[i].isEmpty)
-			{
-				printTipo(listaTipos[i]);
-				ret = OK;
-			}
+			printTipo(listaTipos[i]);
+			ret = OK;
+
 		}
 	}
 	printf("********** FIN SECCIÓN MOSTRAR TIPOS **********\n");
 	return ret;
 }
+Tipo setIdTipo(Tipo listaTipos[],int sizeTipo)
+{
+	Tipo idTipo;
+	// recorro la lista de tipos para obtener el idTipo
+	for(int i; i < sizeTipo; i++)
+	{
+		if(listaTipos[i].id >= 1000 && isAlphabetic(listaTipos[i].descripcion))
+		{
+			idTipo.id = listaTipos[i].id;
+			strcpy(idTipo.descripcion,listaTipos[i].descripcion);
 
+//			printf("::: ESTOY EN SET ID TIPO => ID: %d - DESCRIPCIÓN: %s\n",idTipo.id, idTipo.descripcion);
+
+		}
+	}
+	return idTipo;
+}

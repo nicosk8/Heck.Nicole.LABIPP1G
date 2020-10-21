@@ -13,10 +13,10 @@
 typedef struct
 {
 	int id; // autoincremental
-	Bicicleta idBicicleta;
+//	Bicicleta idBicicleta;
 	Servicio idServicio;
 	Fecha fecha;
-	int isEmpty;
+//	int isEmpty;
 } Trabajo;
 
 int initTrabajos(Trabajo listTrabajos[], int size);
