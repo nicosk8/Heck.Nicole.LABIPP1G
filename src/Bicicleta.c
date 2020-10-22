@@ -118,14 +118,15 @@ Bicicleta setNewBicicleta(int currentId, char marca[],Tipo idTipo,Color idColor,
 }
 float getRodado(float listRodados[],int sizeRodado)
 {
+	int i;
 	float auxRodado;
-	if(listRodados != NULL)
-	{
-		// recorro la lista de colores para obtener el rodado
-		for(int i; i < sizeRodado; i++)
+	if(listRodados != NULL && sizeRodado > 0)
+	{	printf(":::: ESTOY EN SET RODADO ::::\n");
+		// recorro la lista para obtener el rodado
+		for(i = 0; i < sizeRodado; i++)
 		{
 			auxRodado = listRodados[i];
-			printf("::: ESTOY EN SET RODADO => RODADO: %.2f",listRodados[i]);
+			printf("::: CARGUÉ EL RODADO => RODADO: %.2f",listRodados[i]);
 		}
 	}
 	return auxRodado;
@@ -213,21 +214,24 @@ int getModifyOption(){
 	getOption(&option,MESSAGE_INSERT_OPTION,MESSAGE_ERROR_INSERT_OPTION,ADD,SHOW_BICICLETAS,RETRIES);
 	return option;
 }
-void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo){
+void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo, Color listColores[],int sizeColor){
 	printf("********** SECCION MODIFICAR BICICLETAS **********\n");
 	printf("**********      BICICLETAS CARGADAS     **********\n");
 	printBicicletas(listaBicicletas, size);
-	if(isEmptyList(listaBicicletas,size) == 0 && listaBicicletas != NULL && size > 0 && listaTipos != NULL && sizeTipo > 0)
+	if(isEmptyList(listaBicicletas,size) == 0 && listaBicicletas != NULL && size > 0 && listaTipos != NULL &&
+	   sizeTipo > 0 && listColores != NULL && sizeColor > 0)
 	{
-		int idToFind,index;
+		int idToFind,indexBicicleta;
 		char optionUser,optionField;
 		char marca[LENGTH];
 		int idTipo;
 		int indexTipo;
+		int idColor;
+		int indexColor;
 		do{
 			getNumber(&idToFind,"Ingrese el id de la bicicleta que desea modificar:\n","ERROR, id inexistente. Reintente por favor: \n", RETRIES);
-			index = getBicicletaById(idToFind, listaBicicletas, size);
-			if(index != ERROR)
+			indexBicicleta = getBicicletaById(idToFind, listaBicicletas, size);
+			if(indexBicicleta != ERROR)
 			{
 				printf("Los datos actuales de la bicicleta son:\n");
 				printf("  - ID Bicileta: %d\n"
@@ -235,13 +239,13 @@ void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo)
 						" -  ID Tipo: %d  \n  - Descipción Tipo: %s\n "
 						" -  ID Color: %d \n  - Descipción Color: %s\n "
 						" - Rodado: %.2f \n",
-						listaBicicletas[index].id,
-						listaBicicletas[index].marca,
-						listaBicicletas[index].idTipo.id,
-						listaBicicletas[index].idTipo.descripcion,
-						listaBicicletas[index].idColor.id,
-						listaBicicletas[index].idColor.descripcion,
-						listaBicicletas[index].rodado);
+						listaBicicletas[indexBicicleta].id,
+						listaBicicletas[indexBicicleta].marca,
+						listaBicicletas[indexBicicleta].idTipo.id,
+						listaBicicletas[indexBicicleta].idTipo.descripcion,
+						listaBicicletas[indexBicicleta].idColor.id,
+						listaBicicletas[indexBicicleta].idColor.descripcion,
+						listaBicicletas[indexBicicleta].rodado);
 				do{
 
 					switch(getModifyOption())
@@ -250,7 +254,7 @@ void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo)
 
 											if(getString(marca,"Ingrese la nueva marca de la bicicleta:\n",MSG_GETSTRING_ERROR,RETRIES) == OK)
 											{
-												strcpy(listaBicicletas[index].marca,marca);
+												strcpy(listaBicicletas[indexBicicleta].marca,marca);
 												printf("Marca modificada exitosamente! \n");
 											}
 											break;
@@ -260,13 +264,22 @@ void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo)
 											if(getOption(&idTipo,"Ingrese el id del tipo de bicicleta:\n", "ERROR, el id ingresado no pertenece a la lista. Reingrese:\n",
 											   MIN_ID_TIPO, MAX_ID_TIPO, RETRIES) == OK && (indexTipo = getTipoById(idTipo, listaTipos, sizeTipo) != ERROR))
 											{
-												listaBicicletas[indexTipo].idTipo.id = idTipo;
-												strcpy(listaBicicletas[index].idTipo.descripcion,listaTipos[indexTipo].descripcion);
+												listaBicicletas[indexBicicleta].idTipo.id = idTipo; // revisar ese listaBicicletas[<< indexTipo >>].idTipo.id
+												strcpy(listaBicicletas[indexBicicleta].idTipo.descripcion,listaTipos[indexTipo].descripcion);
 												printf("Tipo bicicleta modificado exitosamente! \n");
 											}
 
 											break;
 						case MODIFY_COLOR:
+
+											printColores(listColores,sizeColor);
+											if(getOption(&idColor,"Ingrese el id del color de la bicicleta:\n", "ERROR, el id ingresado no pertenece a la lista. Reingrese:\n",
+											   MIN_ID_COLOR, MAX_ID_COLOR, RETRIES) == OK && (indexColor = getColorById(idColor, listColores, sizeColor) != ERROR))
+											{
+												listaBicicletas[indexBicicleta].idColor.id = idColor;
+												strcpy(listaBicicletas[indexBicicleta].idColor.descripcion,listColores[indexColor].descripcion);
+												printf("Color de bicicleta modificado exitosamente! \n");
+											}
 											break;
 						case MODIFY_RODADO:
 											break;
@@ -275,6 +288,7 @@ void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo)
 				}while(optionField == 's');
 
 			}
+			getCaracter(&optionUser, "Desea modificar otra bicicleta? Ingrese s o n: ", "ERROR: ingrese s o n\n ", 'n', 's', RETRIES);
 		}while(optionUser == 's');
 
 	}else

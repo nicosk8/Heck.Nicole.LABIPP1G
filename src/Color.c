@@ -62,3 +62,22 @@ Color setIdColor(Color listaColor[],int sizeColor)
 	}
 	return idColor;
 }
+
+int getColorById(int idToFind, Color listColores[], int sizeColor)
+{
+	int index=-1,i;
+	if (listColores != NULL && sizeColor > 0 && idToFind > 0)
+	{
+		for(i = 0; i < sizeColor ; i++)
+		{
+			if(listColores[i].id == idToFind)
+			{
+				index = i;
+				break;
+			}
+		}
+	}
+		return index;
+
+
+}

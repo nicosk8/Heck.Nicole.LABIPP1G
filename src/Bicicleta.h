@@ -63,5 +63,5 @@ int getBicicletaById(int idToFind, Bicicleta listaBicicletas[], int size);
 /**/
 int getModifyOption();
 /**/
-void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipos);
+void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipos,Color listColores[],int sizeColor);
 #endif /* BICICLETA_H_ */

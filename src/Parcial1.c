@@ -47,7 +47,7 @@ int main(void) {
 					printf("::::ENTRÉ AL ADD::::\n");
 				break;
 			case MODIFY:
-				modify(listaBicicletas,QTY_BICILETAS,listaTipos,QTY_TIPOS);
+				modify(listaBicicletas,QTY_BICILETAS,listaTipos,QTY_TIPOS,listaColores,QTY_COLORES);
 				break;
 			case DELETE:
 //				delete(listaBicicletas,QTY_BICILETAS);

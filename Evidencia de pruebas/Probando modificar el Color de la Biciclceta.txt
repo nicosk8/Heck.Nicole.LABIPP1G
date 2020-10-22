@@ -1,0 +1,144 @@
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 
+1
+********** SECCION AGREGAR BICICLETAS **********
+Ingrese la marca de la bicicleta:
+Falopa
+:::: BICICLETA CARGADA EXITOSAMENTE !! ::::
+********** FIN SECCION AGREGAR BICICLETAS **********
+::::ENTRÉ AL ADD::::
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 
+2
+********** SECCION MODIFICAR BICICLETAS **********
+**********      BICICLETAS CARGADAS     **********
+********** SECCIÓN MOSTRAR BICICLETAS **********
+**** BICICLETAS CARGADAS : *****
+ - Id Bicileta: 1
+ - Marca: Falopa
+ - ID Tipo: 1300
+ - Descipción Tipo: BMX
+ -  ID Color: 5400
+ - Descipción Color: Rojo
+ - Rodado: 0.00
+**** Lista vacía - No hay bibicletas para mostrar ****
+********** FIN SECCIÓN MOSTRAR BICICLETAS **********
+Ingrese el id de la bicicleta que desea modificar:
+3
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 
+2
+********** SECCION MODIFICAR BICICLETAS **********
+**********      BICICLETAS CARGADAS     **********
+********** SECCIÓN MOSTRAR BICICLETAS **********
+**** BICICLETAS CARGADAS : *****
+ - Id Bicileta: 1
+ - Marca: Falopa
+ - ID Tipo: 1300
+ - Descipción Tipo: BMX
+ -  ID Color: 5400
+ - Descipción Color: Rojo
+ - Rodado: 0.00
+**** Lista vacía - No hay bibicletas para mostrar ****
+********** FIN SECCIÓN MOSTRAR BICICLETAS **********
+Ingrese el id de la bicicleta que desea modificar:
+1
+Los datos actuales de la bicicleta son:
+  - ID Bicileta: 1
+ - Marca: Falopa    
+  -  ID Tipo: 1300  
+  - Descipción Tipo: BMX
+  -  ID Color: 5400 
+  - Descipción Color: Rojo
+  - Rodado: 0.00 
+********** MENU MODIFICAR **********
+1- Modificar marca
+2- Modificar tipo
+3- Modificar color
+4- Modificar rodado
+Ingrese una opcion: 
+3
+********** SECCIÓN MOSTRAR COLORES **********
+Id/Descripción: 5000 ->  Gris
+Id/Descripción: 5100 ->  Negro
+Id/Descripción: 5200 ->  Blanco
+Id/Descripción: 5300 ->  Azul
+Id/Descripción: 5400 ->  Rojo
+********** FIN SECCIÓN MOSTRAR COLORES **********
+Ingrese el id del color de la bicicleta:
+5000
+Color de bicicleta modificado exitosamente! 
+Desea modificar otro campo? Ingrese s o n: n
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 
+4
+********** SECCIÓN MOSTRAR BICICLETAS **********
+**** BICICLETAS CARGADAS : *****
+ - Id Bicileta: 1
+ - Marca: Falopa
+ - ID Tipo: 1300
+ - Descipción Tipo: BMX
+ -  ID Color: 5400
+ - Descipción Color: Negro
+ - Rodado: 0.00
+**** Lista vacía - No hay bibicletas para mostrar ****
+********** FIN SECCIÓN MOSTRAR BICICLETAS **********
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 
+0
+************ FIN DEL PROGRAMA ************

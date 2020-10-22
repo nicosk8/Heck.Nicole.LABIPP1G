@@ -74,6 +74,7 @@ int getTipoById(int idToFind, Tipo listaTipos[], int sizeTipos)
 			if(listaTipos[i].id == idToFind)
 			{
 				index = i;
+				printf("Id TIPO : %d - index de la lista : %d\n",idToFind,index);
 				break;
 			}
 		}

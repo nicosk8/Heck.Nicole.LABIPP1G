@@ -52,6 +52,6 @@
 #define  RETRIES      	3
 #define  MIN_ID_TIPO	1000
 #define  MAX_ID_TIPO	1300
-
-
+#define  MIN_ID_COLOR	5000
+#define  MAX_ID_COLOR	5400
 #endif /* DEFINES_H_ */

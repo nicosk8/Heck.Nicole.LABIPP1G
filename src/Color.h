@@ -33,4 +33,6 @@ void printColor(Color color);
 int printColores(Color listColores[], int size);
 /**/
 Color setIdColor(Color listaColor[],int sizeColor);
+/**/
+int getColorById(int idToFind, Color listColores[], int sizeColor);
 #endif /* COLOR_H_ */
