@@ -58,5 +58,10 @@ float getRodado(float listRodados[],int sizeRodado);
 int addBicicleta(int freeIndex,Bicicleta listaBicicletas[],int currentId,int size,char marca[], Tipo idTipo, Color idColor,float rodado);
 /**/
 void add(Bicicleta listaBicicletas[],int size ,int *idBicicleta, Tipo listaTipos[], int sizeTipo,Color listaColor[],int sizeColor, float listRodados[],int sizeRodado);
-
+/**/
+int getBicicletaById(int idToFind, Bicicleta listaBicicletas[], int size);
+/**/
+int getModifyOption();
+/**/
+void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipos);
 #endif /* BICICLETA_H_ */

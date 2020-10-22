@@ -26,7 +26,7 @@ int initTipos(Tipo listTipos[], int size)
 	return ret;
 }*/
 void printTipo(Tipo tipo){
-	printf("Id/Descripción: %d ->  %s\n",tipo.id,tipo.descripcion);
+	printf("Id : %d - Descripción: %s\n",tipo.id,tipo.descripcion);
 }
 
 int printTipos(Tipo listaTipos[], int size)
@@ -62,4 +62,23 @@ Tipo setIdTipo(Tipo listaTipos[],int sizeTipo)
 		}
 	}
 	return idTipo;
+}
+
+int getTipoById(int idToFind, Tipo listaTipos[], int sizeTipos)
+{
+	int index=-1,i;
+	if (listaTipos != NULL && sizeTipos > 0 && idToFind > 0)
+	{
+		for(i = 0; i < sizeTipos ; i++)
+		{
+			if(listaTipos[i].id == idToFind)
+			{
+				index = i;
+				break;
+			}
+		}
+	}
+		return index;
+
+
 }

@@ -11,7 +11,7 @@
 typedef struct
 {
 	int id; // comienza en 5000
-	char descripcion[20];
+	char descripcion[LENGTH];
 } Color;
 
 /*Brief initialize isEmpty en 1

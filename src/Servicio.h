@@ -11,7 +11,7 @@
 typedef struct
 {
 	int id; //comienza en 20000
-	char descripcion[25];
+	char descripcion[LENGTH];
 	float precio;
 } Servicio;
 

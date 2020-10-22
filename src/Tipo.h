@@ -38,4 +38,6 @@ void printTipo(Tipo tipo);
 int printTipos(Tipo listaTipos[], int size);
 /**/
 Tipo setIdTipo(Tipo listaTipos[],int sizeTipo);
+/**/
+int getTipoById(int idToFind, Tipo listaTipos[], int sizeTipos);
 #endif /* TIPO_H_ */

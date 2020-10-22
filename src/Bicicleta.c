@@ -96,6 +96,7 @@ int getFreeIndexBicicleta(Bicicleta listaBicicletas[], int size)
 	}
 	return index;
 }
+
 void getNewBicicletaData(char marca[],Tipo *idTipo,Color *idColor,float *rodado,Tipo listaTipos[], int sizeTipo, Color listaColor[],int sizeColor,float listRodados[],int sizeRodado)
 {
 	getString(marca,"Ingrese la marca de la bicicleta:\n",MSG_GETSTRING_ERROR,RETRIES);
@@ -165,9 +166,127 @@ void add(Bicicleta listaBicicletas[],int size ,int *idBicicleta, Tipo listaTipos
 		}
 	}else
 	{
-		printf(":::: ERROR AL CARGAR LA BICICLETA ::::\n");
+		printf(":::: HUBO UN ERROR AL CARGAR LA BICICLETA O NO HAY QUEDA ESPACIO EN LA LISTA ::::\n");
 	}
 	printf("********** FIN SECCION AGREGAR BICICLETAS **********\n");
 }
 
 /****************** BOTTOM ADD BICICLETAS ********************************************/
+/****************** TOP ADD BICICLETAS ********************************************/
+int isEmptyList(Bicicleta listaBicicletas[],int size)
+{
+	int isEmpty=1;
+	for(int i = 0; i<size; i++)
+	{
+		if(listaBicicletas[i].isEmpty != 1)
+		{
+				isEmpty = 0;
+		}
+	}
+	return isEmpty;
+}
+int getBicicletaById(int idToFind, Bicicleta listaBicicletas[], int size)
+{
+	int index=-1,i;
+	if (listaBicicletas != NULL && size > 0 && idToFind > 0)
+	{
+		for(i = 0; i < size ; i++)
+		{
+			if(listaBicicletas[i].id == idToFind)
+			{
+				index = i;
+				break;
+			}
+		}
+	}
+		return index;
+
+
+}
+int getModifyOption(){
+	int option;
+	printf("********** MENU MODIFICAR **********\n");
+	printf("1- Modificar marca\n");
+	printf("2- Modificar tipo\n");
+	printf("3- Modificar color\n");
+	printf("4- Modificar rodado\n");
+	getOption(&option,MESSAGE_INSERT_OPTION,MESSAGE_ERROR_INSERT_OPTION,ADD,SHOW_BICICLETAS,RETRIES);
+	return option;
+}
+void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo){
+	printf("********** SECCION MODIFICAR BICICLETAS **********\n");
+	printf("**********      BICICLETAS CARGADAS     **********\n");
+	printBicicletas(listaBicicletas, size);
+	if(isEmptyList(listaBicicletas,size) == 0 && listaBicicletas != NULL && size > 0 && listaTipos != NULL && sizeTipo > 0)
+	{
+		int idToFind,index;
+		char optionUser,optionField;
+		char marca[LENGTH];
+		int idTipo;
+		int indexTipo;
+		do{
+			getNumber(&idToFind,"Ingrese el id de la bicicleta que desea modificar:\n","ERROR, id inexistente. Reintente por favor: \n", RETRIES);
+			index = getBicicletaById(idToFind, listaBicicletas, size);
+			if(index != ERROR)
+			{
+				printf("Los datos actuales de la bicicleta son:\n");
+				printf("  - ID Bicileta: %d\n"
+						" - Marca: %s    \n "
+						" -  ID Tipo: %d  \n  - Descipción Tipo: %s\n "
+						" -  ID Color: %d \n  - Descipción Color: %s\n "
+						" - Rodado: %.2f \n",
+						listaBicicletas[index].id,
+						listaBicicletas[index].marca,
+						listaBicicletas[index].idTipo.id,
+						listaBicicletas[index].idTipo.descripcion,
+						listaBicicletas[index].idColor.id,
+						listaBicicletas[index].idColor.descripcion,
+						listaBicicletas[index].rodado);
+				do{
+
+					switch(getModifyOption())
+					{
+						case MODIFY_MARCA:
+
+											if(getString(marca,"Ingrese la nueva marca de la bicicleta:\n",MSG_GETSTRING_ERROR,RETRIES) == OK)
+											{
+												strcpy(listaBicicletas[index].marca,marca);
+												printf("Marca modificada exitosamente! \n");
+											}
+											break;
+						case MODIFY_TIPO:
+
+											printTipos(listaTipos,sizeTipo);
+											if(getOption(&idTipo,"Ingrese el id del tipo de bicicleta:\n", "ERROR, el id ingresado no pertenece a la lista. Reingrese:\n",
+											   MIN_ID_TIPO, MAX_ID_TIPO, RETRIES) == OK && (indexTipo = getTipoById(idTipo, listaTipos, sizeTipo) != ERROR))
+											{
+												listaBicicletas[indexTipo].idTipo.id = idTipo;
+												strcpy(listaBicicletas[index].idTipo.descripcion,listaTipos[indexTipo].descripcion);
+												printf("Tipo bicicleta modificado exitosamente! \n");
+											}
+
+											break;
+						case MODIFY_COLOR:
+											break;
+						case MODIFY_RODADO:
+											break;
+					}
+					getCaracter(&optionField, "Desea modificar otro campo? Ingrese s o n: ", "ERROR: ingrese s o n\n ", 'n', 's', RETRIES);
+				}while(optionField == 's');
+
+			}
+		}while(optionUser == 's');
+
+	}else
+	{
+		printf(":::: ERROR !! LA LISTA ESTÁ VACÍA - DEBE AGREGAR POR LO MENOS UNA BICICLETA ::::\n");
+	}
+}
+
+
+
+
+
+
+
+
