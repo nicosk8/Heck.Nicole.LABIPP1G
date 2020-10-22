@@ -124,14 +124,17 @@ int getFloat(float *pResult) {
 	char buffer[SIZE_BUFFER];
 	fflush(stdin);
 	fgets(buffer, sizeof(buffer), stdin);
-	buffer[strlen(buffer) - 1] = '\0';
+//	buffer[strlen(buffer) - 1] = '\0';
 	if (isFloat(buffer)) {
 		*pResult = atof(buffer);
 		ret = 0;
 	}
 	return ret;
 }
+/*int getFloatNumber(int *pResult, char *message, char *errorMessage, int retries)
+{
 
+}*/
 int getString(char* pResult, char* message,char* errorMessage,int retries){
 	int retorno = ERROR;
 	char buffer[SIZE_BUFFER];

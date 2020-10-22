@@ -1,0 +1,269 @@
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 
+1
+********** SECCION AGREGAR BICICLETAS **********
+Ingrese la marca de la bicicleta:
+Falopa
+********** SECCIÓN MOSTRAR TIPOS **********
+Id : 1000 - Descripción: Rutera
+Id : 1100 - Descripción: Carrera
+Id : 1200 - Descripción: Mountain
+Id : 1300 - Descripción: BMX
+********** FIN SECCIÓN MOSTRAR TIPOS **********
+Ingrese el id del tipo:
+1300
+Id TIPO : 1300 - Descripción: BMX - index de la lista : 3
+********** SECCIÓN MOSTRAR COLORES **********
+Id : 5000 - Descripción: Gris
+Id : 5100 - Descripción: Negro
+Id : 5200 - Descripción: Blanco
+Id : 5300 - Descripción: Azul
+Id : 5400 - Descripción: Rojo
+********** FIN SECCIÓN MOSTRAR COLORES **********
+Ingrese el id del color:
+5400
+Id COLOR : 5400 - Descripción: Rojo - index de la lista COLOR : 4
+:::: ESTOY EN SET RODADO ::::
+::: CARGUÉ EL RODADO => RODADO: 20.00::: CARGUÉ EL RODADO => RODADO: 26.00::: CARGUÉ EL RODADO => RODADO: 27.50::: CARGUÉ EL RODADO => RODADO: 29.00:::: BICICLETA CARGADA EXITOSAMENTE !! ::::
+********** FIN SECCION AGREGAR BICICLETAS **********
+::::ENTRÉ AL ADD::::
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 
+1
+********** SECCION AGREGAR BICICLETAS **********
+Ingrese la marca de la bicicleta:
+Patito
+********** SECCIÓN MOSTRAR TIPOS **********
+Id : 1000 - Descripción: Rutera
+Id : 1100 - Descripción: Carrera
+Id : 1200 - Descripción: Mountain
+Id : 1300 - Descripción: BMX
+********** FIN SECCIÓN MOSTRAR TIPOS **********
+Ingrese el id del tipo:
+1000
+Id TIPO : 1000 - Descripción: Rutera - index de la lista : 0
+********** SECCIÓN MOSTRAR COLORES **********
+Id : 5000 - Descripción: Gris
+Id : 5100 - Descripción: Negro
+Id : 5200 - Descripción: Blanco
+Id : 5300 - Descripción: Azul
+Id : 5400 - Descripción: Rojo
+********** FIN SECCIÓN MOSTRAR COLORES **********
+Ingrese el id del color:
+5300
+Id COLOR : 5300 - Descripción: Azul - index de la lista COLOR : 3
+:::: ESTOY EN SET RODADO ::::
+::: CARGUÉ EL RODADO => RODADO: 20.00::: CARGUÉ EL RODADO => RODADO: 26.00::: CARGUÉ EL RODADO => RODADO: 27.50::: CARGUÉ EL RODADO => RODADO: 29.00:::: BICICLETA CARGADA EXITOSAMENTE !! ::::
+********** FIN SECCION AGREGAR BICICLETAS **********
+::::ENTRÉ AL ADD::::
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 
+4
+********** SECCIÓN MOSTRAR BICICLETAS **********
+**** BICICLETAS CARGADAS : *****
+ - Id Bicileta: 1
+ - Marca: Falopa
+ - ID Tipo: 1300
+ - Descipción Tipo: Carrera
+ -  ID Color: 5400
+ - Descipción Color: Negro
+ - Rodado: 29.00
+ - Id Bicileta: 2
+ - Marca: Patito
+ - ID Tipo: 1000
+ - Descipción Tipo: Carrera
+ -  ID Color: 5300
+ - Descipción Color: Negro
+ - Rodado: 29.00
+**** Lista vacía - No hay bibicletas para mostrar ****
+********** FIN SECCIÓN MOSTRAR BICICLETAS **********
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 
+2
+********** SECCION MODIFICAR BICICLETAS **********
+**********      BICICLETAS CARGADAS     **********
+********** SECCIÓN MOSTRAR BICICLETAS **********
+**** BICICLETAS CARGADAS : *****
+ - Id Bicileta: 1
+ - Marca: Falopa
+ - ID Tipo: 1300
+ - Descipción Tipo: Carrera
+ -  ID Color: 5400
+ - Descipción Color: Negro
+ - Rodado: 29.00
+ - Id Bicileta: 2
+ - Marca: Patito
+ - ID Tipo: 1000
+ - Descipción Tipo: Carrera
+ -  ID Color: 5300
+ - Descipción Color: Negro
+ - Rodado: 29.00
+**** Lista vacía - No hay bibicletas para mostrar ****
+********** FIN SECCIÓN MOSTRAR BICICLETAS **********
+Ingrese el id de la bicicleta que desea modificar:
+1
+Los datos actuales de la bicicleta son:
+  - ID Bicileta: 1
+ - Marca: Falopa    
+  -  ID Tipo: 1300  
+  - Descipción Tipo: Carrera
+  -  ID Color: 5400 
+  - Descipción Color: Negro
+  - Rodado: 29.00 
+********** MENU MODIFICAR **********
+1- Modificar marca
+2- Modificar tipo
+3- Modificar color
+4- Modificar rodado
+Ingrese una opcion: 
+2
+********** SECCIÓN MOSTRAR TIPOS **********
+Id : 1000 - Descripción: Rutera
+Id : 1100 - Descripción: Carrera
+Id : 1200 - Descripción: Mountain
+Id : 1300 - Descripción: BMX
+********** FIN SECCIÓN MOSTRAR TIPOS **********
+Ingrese el id del tipo de bicicleta:
+1100
+Id TIPO : 1100 - Descripción: Carrera - index de la lista : 1
+Tipo bicicleta modificado exitosamente! 
+Desea modificar otro campo? Ingrese s o n: s
+********** MENU MODIFICAR **********
+1- Modificar marca
+2- Modificar tipo
+3- Modificar color
+4- Modificar rodado
+Ingrese una opcion: 
+3
+********** SECCIÓN MOSTRAR COLORES **********
+Id : 5000 - Descripción: Gris
+Id : 5100 - Descripción: Negro
+Id : 5200 - Descripción: Blanco
+Id : 5300 - Descripción: Azul
+Id : 5400 - Descripción: Rojo
+********** FIN SECCIÓN MOSTRAR COLORES **********
+Ingrese el id del color de la bicicleta:
+5400
+Id COLOR : 5400 - Descripción: Rojo - index de la lista COLOR : 4
+Color de bicicleta modificado exitosamente! 
+Desea modificar otro campo? Ingrese s o n: n
+Desea modificar otra bicicleta? Ingrese s o n: s
+Ingrese el id de la bicicleta que desea modificar:
+2
+Los datos actuales de la bicicleta son:
+  - ID Bicileta: 2
+ - Marca: Patito    
+  -  ID Tipo: 1000  
+  - Descipción Tipo: Carrera
+  -  ID Color: 5300 
+  - Descipción Color: Negro
+  - Rodado: 29.00 
+********** MENU MODIFICAR **********
+1- Modificar marca
+2- Modificar tipo
+3- Modificar color
+4- Modificar rodado
+Ingrese una opcion: 
+3
+********** SECCIÓN MOSTRAR COLORES **********
+Id : 5000 - Descripción: Gris
+Id : 5100 - Descripción: Negro
+Id : 5200 - Descripción: Blanco
+Id : 5300 - Descripción: Azul
+Id : 5400 - Descripción: Rojo
+********** FIN SECCIÓN MOSTRAR COLORES **********
+Ingrese el id del color de la bicicleta:
+5200
+Id COLOR : 5200 - Descripción: Blanco - index de la lista COLOR : 2
+Color de bicicleta modificado exitosamente! 
+Desea modificar otro campo? Ingrese s o n: n
+Desea modificar otra bicicleta? Ingrese s o n: n
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 
+4
+********** SECCIÓN MOSTRAR BICICLETAS **********
+**** BICICLETAS CARGADAS : *****
+ - Id Bicileta: 1
+ - Marca: Falopa
+ - ID Tipo: 1100
+ - Descipción Tipo: Carrera
+ -  ID Color: 5400
+ - Descipción Color: Negro
+ - Rodado: 29.00
+ - Id Bicileta: 2
+ - Marca: Patito
+ - ID Tipo: 1000
+ - Descipción Tipo: Carrera
+ -  ID Color: 5200
+ - Descipción Color: Negro
+ - Rodado: 29.00
+**** Lista vacía - No hay bibicletas para mostrar ****
+********** FIN SECCIÓN MOSTRAR BICICLETAS **********
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 

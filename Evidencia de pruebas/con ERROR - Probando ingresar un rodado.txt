@@ -1,0 +1,63 @@
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 
+1
+********** SECCION AGREGAR BICICLETAS **********
+Ingrese la marca de la bicicleta:
+falopa
+********** SECCIÓN MOSTRAR TIPOS **********
+Id : 1000 - Descripción: Rutera
+Id : 1100 - Descripción: Carrera
+Id : 1200 - Descripción: Mountain
+Id : 1300 - Descripción: BMX
+********** FIN SECCIÓN MOSTRAR TIPOS **********
+Ingrese el id del tipo:
+1100
+Id TIPO : 1100 - Descripción: Carrera - index de la lista : 1
+********** SECCIÓN MOSTRAR COLORES **********
+Id : 5000 - Descripción: Gris
+Id : 5100 - Descripción: Negro
+Id : 5200 - Descripción: Blanco
+Id : 5300 - Descripción: Azul
+Id : 5400 - Descripción: Rojo
+********** FIN SECCIÓN MOSTRAR COLORES **********
+Ingrese el id del color:
+5200
+Id COLOR : 5200 - Descripción: Blanco - index de la lista COLOR : 2
+********** SECCIÓN MOSTRAR RODADOS **********
+Nro.: 20.00
+Nro.: 26.00
+Nro.: 27.50
+Nro.: 29.00
+********** FIN SECCIÓN MOSTRAR RODADOS **********
+Ingrese el rodado:
+27.50
+::: RODADO SELECCIONADO: 0.00ERROR, el rodado ingresado es inválido
+ERROR, el rodado ingresado es inválido
+ERROR, el rodado ingresado es inválido
+ERROR, el rodado ingresado es inválido
+:::: BICICLETA CARGADA EXITOSAMENTE !! ::::
+********** FIN SECCION AGREGAR BICICLETAS **********
+********** MENU PRINCIPAL **********
+1- Altas Bicicleta
+2- Modificar Bicicleta
+3- Eliminar Bicicleta
+4- Listar Bicicletas
+5- Listar Tipos
+6- Listar Colores
+7- Listar Servicios
+8- Alta Trabajo
+6- Listar Trabajos
+0- Salir
+************************************
+Ingrese una opcion: 

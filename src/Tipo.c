@@ -49,17 +49,13 @@ int printTipos(Tipo listaTipos[], int size)
 Tipo setIdTipo(Tipo listaTipos[],int sizeTipo)
 {
 	Tipo idTipo;
-	// recorro la lista de tipos para obtener el idTipo
-	for(int i; i < sizeTipo; i++)
+	int indexTipo, auxId;
+	printTipos(listaTipos,sizeTipo);
+	if(getOption(&auxId,"Ingrese el id del tipo:\n", "ERROR, el id ingresado no pertenece a la lista. Reingrese:\n",
+			MIN_ID_TIPO, MAX_ID_TIPO, RETRIES) == OK && (indexTipo = getTipoById(auxId, listaTipos, sizeTipo) != ERROR))
 	{
-		if(listaTipos[i].id >= 1000 && isAlphabetic(listaTipos[i].descripcion))
-		{
-			idTipo.id = listaTipos[i].id;
-			strcpy(idTipo.descripcion,listaTipos[i].descripcion);
-
-//			printf("::: ESTOY EN SET ID TIPO => ID: %d - DESCRIPCIÓN: %s\n",idTipo.id, idTipo.descripcion);
-
-		}
+		idTipo.id = auxId;
+		strcpy(idTipo.descripcion,listaTipos[indexTipo].descripcion);
 	}
 	return idTipo;
 }
@@ -71,15 +67,27 @@ int getTipoById(int idToFind, Tipo listaTipos[], int sizeTipos)
 	{
 		for(i = 0; i < sizeTipos ; i++)
 		{
-			if(listaTipos[i].id == idToFind)
+			if(listaTipos[i].id >= MIN_ID_TIPO &&
+			   listaTipos[i].id <= MAX_ID_TIPO &&
+			   isAlphabetic(listaTipos[i].descripcion) &&
+			   listaTipos[i].id == idToFind)
 			{
 				index = i;
-				printf("Id TIPO : %d - index de la lista : %d\n",idToFind,index);
+				printf("Id TIPO : %d - Descripción: %s - index de la lista : %d\n",idToFind,listaTipos[i].descripcion,index);
 				break;
 			}
 		}
 	}
 		return index;
-
-
 }
+
+
+
+
+
+
+
+
+
+
+

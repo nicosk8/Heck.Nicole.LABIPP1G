@@ -30,6 +30,7 @@
 #define MESSAGE_FULL_LIST            "No hay espacio para agregar nuevos empleados. Puede eliminar o borrar empleado\n"
 #define MSG_GETSTRING_ERROR          "Error, debe ingresar sólo letras.\n"
 #define MSG_NUMBER_ERROR             "Error, debe ingresar sólo números.\n"
+#define MSG_FLOAT_ERROR				 "Error, debe ingresar un nro. flotante.\n"
 #define MESSAGE_INSERT_ID            "Ingrese el ID que desea encontrar: \n"
 #define MESSAGE_ERROR_ID             "Ingresó un ID inexistente, reingrese: \n"
 

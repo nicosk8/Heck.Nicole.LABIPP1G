@@ -26,7 +26,7 @@ int initColores(Color listColores[], int size)
 	return ret;
 }*/
 void printColor(Color color){
-	printf("Id/Descripción: %d ->  %s\n",color.id,color.descripcion);
+	printf("Id : %d - Descripción: %s\n",color.id,color.descripcion);
 }
 
 int printColores(Color listColores[], int size)
@@ -49,16 +49,13 @@ int printColores(Color listColores[], int size)
 Color setIdColor(Color listaColor[],int sizeColor)
 {
 	Color idColor;
-	// recorro la lista de colores para obtener el idColor
-	for(int i; i < sizeColor; i++)
+	int indexColor, auxId;
+	printColores(listaColor,sizeColor);
+	if(getOption(&auxId,"Ingrese el id del color:\n", "ERROR, el id ingresado no pertenece a la lista. Reingrese:\n",
+	   MIN_ID_COLOR, MAX_ID_COLOR, RETRIES) == OK && (indexColor = getColorById(auxId, listaColor, sizeColor) != ERROR))
 	{
-		if(listaColor[i].id >= 1000 && isAlphabetic(listaColor[i].descripcion))
-		{
-			idColor.id = listaColor[i].id;
-			strcpy(idColor.descripcion,listaColor[i].descripcion);
-			//			printf("::: ESTOY EN SET ID COLOR => ID: %d - DESCRIPCIÓN: %s\n",listaColor[i].id,listaColor[i].descripcion);
-		}
-
+		idColor.id = auxId;
+		strcpy(idColor.descripcion,listaColor[indexColor].descripcion);
 	}
 	return idColor;
 }
@@ -70,9 +67,13 @@ int getColorById(int idToFind, Color listColores[], int sizeColor)
 	{
 		for(i = 0; i < sizeColor ; i++)
 		{
-			if(listColores[i].id == idToFind)
+			if(listColores[i].id >= MIN_ID_COLOR &&
+			   listColores[i].id <= MAX_ID_COLOR &&
+			   isAlphabetic(listColores[i].descripcion) &&
+			   listColores[i].id == idToFind)
 			{
 				index = i;
+				printf("Id COLOR : %d - Descripción: %s - index de la lista COLOR : %d\n",idToFind,listColores[i].descripcion,index);
 				break;
 			}
 		}

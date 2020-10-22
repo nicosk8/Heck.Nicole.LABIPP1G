@@ -7,6 +7,7 @@
 
 #ifndef UTN_H_
 #define UTN_H_
+
 /*
  * brief - Verifies a number character be numeric
  * param - string: string of characters
@@ -69,7 +70,6 @@ int getString(char* pResult, char* message,char* errorMessage,int retries);
  * return -  returns 1 if it could get a number  or -1 if it couldn't
  * */
 int getCaracter(char *pResult, char *message, char *errorMessage, char minimun,char maximun, int retries);
-
 
 
 #endif /* UTN_H_ */

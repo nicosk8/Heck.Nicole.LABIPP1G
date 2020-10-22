@@ -39,12 +39,12 @@ int main(void) {
 	do
 	{
 		printOptionMenu(&optionUser);
+//		printf("optionUser: %d",optionUser);
 		switch (optionUser)
 		{
 			case ADD:
 					add(listaBicicletas,QTY_BICILETAS,&idBicicleta, listaTipos,QTY_TIPOS,
 					    listaColores,QTY_COLORES, listRodados,QTY_RODADOS);
-					printf("::::ENTRÉ AL ADD::::\n");
 				break;
 			case MODIFY:
 				modify(listaBicicletas,QTY_BICILETAS,listaTipos,QTY_TIPOS,listaColores,QTY_COLORES);

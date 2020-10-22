@@ -11,6 +11,7 @@
 #include "Bicicleta.h"
 #include "Tipo.h"
 #include "Color.h"
+#include "Rodado.h"
 #include "Servicio.h"
 #include "Fecha.h"
 #include "utn.h"
@@ -116,6 +117,7 @@ Bicicleta setNewBicicleta(int currentId, char marca[],Tipo idTipo,Color idColor,
 	bicicleta.isEmpty = 0;
 	return bicicleta;
 }
+/*
 float getRodado(float listRodados[],int sizeRodado)
 {
 	int i;
@@ -130,7 +132,7 @@ float getRodado(float listRodados[],int sizeRodado)
 		}
 	}
 	return auxRodado;
-}
+}*/
 int addBicicleta(int freeIndex,Bicicleta listaBicicletas[],int currentId,int size,char marca[], Tipo idTipo, Color idColor,float rodado){
   	int ret = -1;
   	Bicicleta newBicicleta;
@@ -152,9 +154,9 @@ void add(Bicicleta listaBicicletas[],int size ,int *idBicicleta, Tipo listaTipos
 	{
 		int currentId = *idBicicleta;
 		char marca[LENGTH];
-		Tipo idTipo = setIdTipo(listaTipos,sizeTipo);
-		Color idColor = setIdColor(listaColor,sizeColor);
-		float rodado = getRodado(listRodados,sizeRodado);
+		Tipo idTipo; /*= setIdTipo(listaTipos,sizeTipo);*/
+		Color idColor; /*= setIdColor(listaColor,sizeColor);*/
+		float rodado; /*= getRodado(listRodados,sizeRodado);*/
 
 		getNewBicicletaData(marca,&idTipo,&idColor,&rodado,listaTipos,sizeTipo,listaColor,sizeColor,listRodados,sizeRodado);
 		if(addBicicleta(freeIndex,listaBicicletas,currentId,size,marca,idTipo,idColor,rodado) == OK){

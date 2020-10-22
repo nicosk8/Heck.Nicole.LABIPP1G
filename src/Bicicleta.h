@@ -9,6 +9,7 @@
 #define BICICLETA_H_
 #include "Tipo.h"
 #include "Color.h"
+#include "Rodado.h"
 #include "Servicio.h"
 #include "Trabajo.h"
 #include "Fecha.h"
@@ -52,8 +53,7 @@ int printBicicletas(Bicicleta listaBicicletas[], int size);
 void getNewBicicletaData(char marca[],Tipo *idTipo,Color *idColor,float *rodado,Tipo listaTipo[], int sizeTipo, Color listaColor[],int sizeColor,float listRodados[],int sizeRodado);
 /**/
 Bicicleta setNewBicicleta(int currentId, char marca[],Tipo idTipo,Color idColor,float auxRodado);
-/**/
-float getRodado(float listRodados[],int sizeRodado);
+
 /**/
 int addBicicleta(int freeIndex,Bicicleta listaBicicletas[],int currentId,int size,char marca[], Tipo idTipo, Color idColor,float rodado);
 /**/
