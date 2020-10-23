@@ -18,4 +18,5 @@ typedef struct
 int initServicios(Servicio listServicios[], int size);
 void printServicio(Servicio servicio);
 int printServicios(Servicio listServicios[], int size);
+int getServicioById(int idServicioToFind,Servicio listaServicios[],int sizeServicio);
 #endif /* SERVICIO_H_ */

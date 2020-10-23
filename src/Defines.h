@@ -35,24 +35,28 @@
 #define MESSAGE_ERROR_ID             "Ingresó un ID inexistente, reingrese: \n"
 
 // menu
-#define ADD     	    1
-#define MODIFY 		    2
-#define MODIFY_MARCA    1
-#define MODIFY_TIPO	    2
-#define MODIFY_COLOR    3
-#define MODIFY_RODADO   4
-#define DELETE 		    3
-#define SHOW_BICICLETAS 4
-#define SHOW_TIPOS	    5
-#define SHOW_COLORES    6
-#define SHOW_SERVICIOS  7
-#define ADD_TRABAJO     8
-#define SHOW_TRABAJO    9
-#define EXIT 		    0
+#define ADD     	           1
+#define MODIFY 		           2
+#define MODIFY_MARCA           1
+#define MODIFY_TIPO	           2
+#define MODIFY_COLOR           3
+#define MODIFY_RODADO          4
+#define DELETE 		           3
+#define SHOW_BICICLETAS        4
+#define SHOW_TIPOS	           5
+#define SHOW_COLORES           6
+#define SHOW_SERVICIOS         7
+#define ADD_TRABAJO            8
+#define SHOW_TRABAJO    	   9
+#define EXIT 		    	   0
 // others
-#define  RETRIES      	3
-#define  MIN_ID_TIPO	1000
-#define  MAX_ID_TIPO	1300
-#define  MIN_ID_COLOR	5000
-#define  MAX_ID_COLOR	5400
+#define  RETRIES      		   3
+#define  MIN_ID_TIPO		1000
+#define  MAX_ID_TIPO		1300
+#define  MIN_ID_COLOR		5000
+#define  MAX_ID_COLOR		5400
+#define  MIN_ID_SERVICIO	20000
+#define  MAX_ID_SERVICIO	23000
+#define  MIN_ANNIO		   	 2020
+#define  MAX_ANNIO		   	 2020
 #endif /* DEFINES_H_ */

@@ -16,6 +16,7 @@
 int isNumeric(char *string);
 int isAlphabetic(char string[]);
 int isFloat(char *string) ;
+int isValidDate(char string[]);
 /*
  * brief - Obtain an integer to write it in a variable
  * param - pResult : variable that stores the number entered

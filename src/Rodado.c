@@ -41,7 +41,7 @@ float getRodado(float listRodados[],int sizeRodado)
 			{
 //				rodado = listRodados[i];
 				rodado = auxRodado;
-				printf("::: RODADO SELECCIONADO: %.2f",rodado);
+				printf("::: RODADO SELECCIONADO: %.2f\n",rodado);
 			}else
 			{
 				printf("ERROR, el rodado ingresado es inválido\n");

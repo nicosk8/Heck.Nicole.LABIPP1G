@@ -28,7 +28,7 @@ int initServicios(Servicio listServicios[], int size)
 	return ret;
 }*/
 void printServicio(Servicio servicio){
-	printf("Id/Descripción: %d ->  %s  - Precio: %.2f\n",servicio.id,servicio.descripcion,servicio.precio);
+	printf("Id : %d - Descripción: %s - Precio: %.2f\n",servicio.id,servicio.descripcion,servicio.precio);
 }
 
 int printServicios(Servicio listServicios[], int size)
@@ -47,4 +47,21 @@ int printServicios(Servicio listServicios[], int size)
 	}
 	printf("********** FIN SECCIÓN MOSTRAR SERVICIOS **********\n");
 	return ret;
+}
+
+int getServicioById(int idServicioToFind,Servicio listaServicios[],int sizeServicio)
+{
+	int index=-1,i;
+	if (listaServicios != NULL && sizeServicio > 0 && idServicioToFind > 0)
+	{
+		for(i = 0; i < sizeServicio ; i++)
+		{
+			if(listaServicios[i].id == idServicioToFind)
+			{
+				index = i;
+				break;
+			}
+		}
+	}
+		return index;
 }

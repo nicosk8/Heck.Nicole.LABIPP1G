@@ -15,4 +15,5 @@ typedef struct
 	int annio;
 } Fecha;
 
+Fecha getFecha();
 #endif /* FECHA_H_ */

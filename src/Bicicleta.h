@@ -7,12 +7,18 @@
 
 #ifndef BICICLETA_H_
 #define BICICLETA_H_
+#include <stdio.h>
+#include <stdlib.h>
+#include <string.h>
+#include "Defines.h"
+#include "Bicicleta.h"
+#include "Trabajo.h"
 #include "Tipo.h"
 #include "Color.h"
 #include "Rodado.h"
 #include "Servicio.h"
-#include "Trabajo.h"
 #include "Fecha.h"
+#include "utn.h"
 
 
 
@@ -63,5 +69,10 @@ int getBicicletaById(int idToFind, Bicicleta listaBicicletas[], int size);
 /**/
 int getModifyOption();
 /**/
-void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipos,Color listColores[],int sizeColor);
+void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipos,Color listColores[],int sizeColor,float listRodados[], int sizeRodados);
+/**/
+void delete(Bicicleta listaBicicletas[], int size);
+/**/
+void altaTrabajo(Trabajo listaTrabajos[],int *currentIdTrabajo,Bicicleta listaBicicletas[],int sizeBicicletas,int sizeTrabajos,Servicio listaServicios[],int sizeServicio);
+
 #endif /* BICICLETA_H_ */

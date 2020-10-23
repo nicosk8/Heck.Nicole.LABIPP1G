@@ -9,6 +9,7 @@
 #include <string.h>
 #include "Defines.h"
 #include "Bicicleta.h"
+#include "Trabajo.h"
 #include "Tipo.h"
 #include "Color.h"
 #include "Rodado.h"
@@ -28,7 +29,7 @@ int printOptionMenu(int *pOption) {
 	printf("6- Listar Colores\n");
 	printf("7- Listar Servicios\n");
 	printf("8- Alta Trabajo\n");
-	printf("6- Listar Trabajos\n");
+	printf("9- Listar Trabajos\n");
 	printf("0- Salir\n");
 	printf("************************************\n");
 	ret = getOption(pOption, MESSAGE_INSERT_OPTION,
@@ -216,12 +217,10 @@ int getModifyOption(){
 	getOption(&option,MESSAGE_INSERT_OPTION,MESSAGE_ERROR_INSERT_OPTION,ADD,SHOW_BICICLETAS,RETRIES);
 	return option;
 }
-void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo, Color listColores[],int sizeColor){
-	printf("********** SECCION MODIFICAR BICICLETAS **********\n");
-	printf("**********      BICICLETAS CARGADAS     **********\n");
+void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo, Color listColores[],int sizeColor, float listRodados[], int sizeRodados){
 	printBicicletas(listaBicicletas, size);
-	if(isEmptyList(listaBicicletas,size) == 0 && listaBicicletas != NULL && size > 0 && listaTipos != NULL &&
-	   sizeTipo > 0 && listColores != NULL && sizeColor > 0)
+	if(isEmptyList(listaBicicletas,size) == 0 /*&& listaBicicletas != NULL && size > 0 && listaTipos != NULL &&
+	   sizeTipo > 0 && listColores != NULL && sizeColor > 0 && listRodados != NULL && sizeRodados < 0*/)
 	{
 		int idToFind,indexBicicleta;
 		char optionUser,optionField;
@@ -230,6 +229,7 @@ void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo,
 		int indexTipo;
 		int idColor;
 		int indexColor;
+//		float nuevoRodado;
 		do{
 			getNumber(&idToFind,"Ingrese el id de la bicicleta que desea modificar:\n","ERROR, id inexistente. Reintente por favor: \n", RETRIES);
 			indexBicicleta = getBicicletaById(idToFind, listaBicicletas, size);
@@ -284,6 +284,9 @@ void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo,
 											}
 											break;
 						case MODIFY_RODADO:
+											/*nuevoRodado = getRodado(listRodados,sizeRodados);
+											listaBicicletas[indexBicicleta].rodado = nuevoRodado;
+											printf("Rodado modificado exitosamente!!\n");*/
 											break;
 					}
 					getCaracter(&optionField, "Desea modificar otro campo? Ingrese s o n: ", "ERROR: ingrese s o n\n ", 'n', 's', RETRIES);
@@ -295,12 +298,110 @@ void modify(Bicicleta listaBicicletas[],int size,Tipo listaTipos[],int sizeTipo,
 
 	}else
 	{
-		printf(":::: ERROR !! LA LISTA ESTÁ VACÍA - DEBE AGREGAR POR LO MENOS UNA BICICLETA ::::\n");
+		printf(":::: ERROR !! LA LISTA ESTÁ VACÍA - PARA MODIFICAR DEBE AGREGAR POR LO MENOS UNA BICICLETA ::::\n");
 	}
+}
+
+void delete(Bicicleta listaBicicletas[], int size){
+	printf("********** SECCIÓN ELIMINAR BICICLETA ************\n");
+	printBicicletas(listaBicicletas, size);
+	if(listaBicicletas != NULL && size > 0 && isEmptyList(listaBicicletas,size) == 0)
+	{
+		int indexBicicleta,idToFind;
+		char optionUser;
+		do
+		{
+			getNumber(&idToFind,"Ingrese el id de la bicicleta que desea eliminar:\n","ERROR, id inexistente. Reintente por favor: \n", RETRIES);
+			indexBicicleta = getBicicletaById(idToFind, listaBicicletas, size);
+			if(indexBicicleta != ERROR)
+			{
+				getCaracter(&optionUser, "Está seguro que desea eliminar esta bicicleta? Ingrese s o n: ", "ERROR: ingrese s o n\n ", 'n', 's', RETRIES);
+				if(optionUser == 's'){
+					listaBicicletas[indexBicicleta].isEmpty = 1;
+					printf("Bicicleta eliminada exitosamente!!\n");
+					getCaracter(&optionUser, "Desea eliminar otro id? Ingrese s o n: ", "ERROR: ingrese s o n\n ", 'n', 's', RETRIES);
+				}else
+				{
+					printf("***Operación cancelada***\n");
+					getCaracter(&optionUser, "Desea eliminar otra bicicleta? Ingrese s o n: ", "ERROR: ingrese s o n\n ", 'n', 's', RETRIES);
+				}
+			}
+		}while(optionUser == 's');
+	}else
+	{
+		printf(":::: ERROR !! LA LISTA ESTÁ VACÍA - NO HAY BICICLETAS PARA ELIMINAR  ::::\n");
+	}
+	printf("********** FIN SECCIÓN ELIMINAR BICICLETA ************\n");
+
+
+}
+/**************** TOP SECCION AGREGAR TRABAJO ****************/
+
+
+// La funcion 'addTrabajo();'  la incluyo en esta librería
+//porque en la librería 'Trabajo' no me toma el tipo de dato Bicicleta.
+void altaTrabajo(Trabajo listaTrabajos[], int *currentIdTrabajo,Bicicleta listaBicicletas[],int sizeBicicletas,int sizeTrabajos,Servicio listaServicios[],int sizeServicio){
+
+	printf("**********   SECCIÓN AGREGAR TRABAJO     **********\n");
+	int freeIndexTrabajo = getFreeIndexTrabajo(listaTrabajos,sizeTrabajos);
+	if(freeIndexTrabajo != ERROR)
+	{
+		if(isEmptyList(listaBicicletas,sizeBicicletas) == 0)
+		{
+			int      idBicicletaToFind,indexBicicleta,
+				     idServicioToFind,indexServicio;
+			Servicio servicio;
+			Fecha    fecha;
+			int      idTrabajo = *currentIdTrabajo;
+
+			printBicicletas(listaBicicletas,sizeBicicletas);
+
+			if(getOption(&idBicicletaToFind,"Ingrese el id de la bicleta:\n","Error, id bicicleta inexistente.Reingrese:\n",ADD,sizeBicicletas,RETRIES) == 0 &&
+			  (indexBicicleta = getBicicletaById(idBicicletaToFind,listaBicicletas,sizeBicicletas) != ERROR))
+			{ 	// si encuentro la bicicleta pido el servicio
+
+				printServicios(listaServicios,sizeServicio);
+				if(getOption(&idServicioToFind,"Ingrese el id del servicio que desea agregar:\n","Error, id servicio inexistente.Reingrese:\n",MIN_ID_SERVICIO,MAX_ID_SERVICIO,RETRIES) == 0 &&
+				  (indexServicio = getServicioById(idServicioToFind,listaServicios,sizeServicio) != ERROR))
+				{ 	// si encuentro el servicio lo cargo y pido la fecha
+					servicio.id = idServicioToFind;
+					strcpy(servicio.descripcion,listaServicios[indexServicio].descripcion);
+					servicio.precio = listaServicios[indexServicio].precio;
+					fecha = getFecha();
+
+					if(addTrabajo(freeIndexTrabajo,listaTrabajos,idTrabajo,sizeTrabajos,idBicicletaToFind,idServicioToFind,fecha)==OK){
+						idTrabajo++;
+						*currentIdTrabajo = idTrabajo;
+						printf(":::: Se ha agregado un trabajo exitosamente!!::::\n");
+					}
+
+				}else
+				{
+					printf(":::: Error al buscar el servicio o el usuario agotó los intentos :::: ");
+				}
+			}
+			else
+			{
+				printf(":::: Error al buscar la bicicleta o el usuario agotó los intentos :::: ");
+			}
+		}
+		else
+		{
+
+			printf(":::: LA LISTA DE BICLETAS ESTA VACÍA ::::");
+		}
+	}
+	else{
+
+		printf(":::: NO HAY ESPACIO PARA AGREAGAR TRABAJOS ::::");
+	}
+	printf("********** FIN SECCIÓN AGREGAR TRABAJO **********\n");
 }
 
 
 
+
+/**************** BOT SECCION TRABAJO ****************/
 
 
 

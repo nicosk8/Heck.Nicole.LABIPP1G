@@ -12,6 +12,7 @@
 #include <stdlib.h>
 #include "Defines.h"
 #include "Bicicleta.h"
+#include "Trabajo.h"
 #include "Servicio.h"
 #include "Tipo.h"
 #include "Color.h"
@@ -22,18 +23,15 @@ int main(void) {
 	fflush(stdin);
 	Tipo listaTipos[QTY_TIPOS] = {{1000,"Rutera"},{1100,"Carrera"},{1200,"Mountain"},{1300,"BMX"}};
 	Color listaColores[QTY_COLORES] = {{5000,"Gris"},{5100,"Negro"},{5200,"Blanco"},{5300,"Azul"},{5400,"Rojo"}};
-	Servicio listaServicios[QTY_SERVICIOS] = {{20000,"Limpieza",250},{21000,"Parche",300},{22000,"Centrado",400},{23000,"Cadena",350}};
+	Servicio listaServicios[QTY_SERVICIOS] = {{20000,"Limpieza",250.00},{21000,"Parche",300.00},{22000,"Centrado",400.00},{23000,"Cadena",350.00}};
 	float listRodados[QTY_RODADOS] = {20,26,27.5,29};
 	Bicicleta listaBicicletas[QTY_BICILETAS];
 	Trabajo listaTrabajos[QTY_TRABAJOS];
-	int idBicicleta = 1,optionUser;
+	int idBicicleta = 1,idTrabajo=1,optionUser;//,idBicicletaToFind,indexBicicletaToFind;
 
 	// Inicio
 	initBicicletas(listaBicicletas,QTY_BICILETAS);
-//	initTipos(listaTipos,QTY_TIPOS);
-//	initColores(listaColores,QTY_COLORES);
-//	initServicios(listaServicios,QTY_SERVICIOS);
-//	initTrabajos(listaTrabajos,QTY_TRABAJOS);
+	initTrabajos(listaTrabajos, QTY_TRABAJOS);
 
 	// Programa principal
 	do
@@ -47,10 +45,10 @@ int main(void) {
 					    listaColores,QTY_COLORES, listRodados,QTY_RODADOS);
 				break;
 			case MODIFY:
-				modify(listaBicicletas,QTY_BICILETAS,listaTipos,QTY_TIPOS,listaColores,QTY_COLORES);
+				modify(listaBicicletas,QTY_BICILETAS,listaTipos,QTY_TIPOS,listaColores,QTY_COLORES,listRodados,QTY_RODADOS);
 				break;
 			case DELETE:
-//				delete(listaBicicletas,QTY_BICILETAS);
+				delete(listaBicicletas,QTY_BICILETAS);
 				break;
 			case SHOW_BICICLETAS:
 				printBicicletas(listaBicicletas,QTY_BICILETAS);
@@ -65,6 +63,9 @@ int main(void) {
 				printServicios(listaServicios,QTY_SERVICIOS);
 				break;
 			case ADD_TRABAJO:
+	//			altaTrabajo(listaTrabajos,QTY_TRABAJOS,listaServicios,QTY_SERVICIOS);
+				altaTrabajo(listaTrabajos,&idTrabajo,listaBicicletas,QTY_BICILETAS,
+						    QTY_TRABAJOS,listaServicios,QTY_SERVICIOS);
 				break;
 			case SHOW_TRABAJO:
 				printTrabajos(listaTrabajos,QTY_TRABAJOS);

@@ -57,7 +57,38 @@ int isFloat(char *string) {
 			}
 	return ret;
 }
-/*************** FIN SECCION VALIDARORES *************************************************/
+
+int isValidDate(char string[]){
+		int ret= -1,
+			i = 0,
+			isNumber=-1,
+		    contadorBarras = 0;
+		if (string != NULL && strlen(string) > 0)
+		{
+			while (string[i] != '\0')
+			{
+				if (string[i] < '0' || string[i] > '9')
+				{
+					if(string[i]=='/' && contadorBarras == 2)
+					{
+						contadorBarras++;
+					}
+
+				}else if(isNumeric(string) == 0)
+				{
+					isNumber = 1;
+				}
+				i++;
+			}
+			if(isNumber == 1 && contadorBarras == 2)
+			{
+				ret = 0;
+			}
+		}
+		return ret;
+
+}
+/*************** FIN SECCION VALIDADORES *************************************************/
 int getInt(int *pResult) {
 	int ret = -1;
 	char buffer[SIZE_BUFFER];
